@@ -2,6 +2,8 @@
 
 This script uses the DeepFace library to perform facial recognition tasks. It downloads images, runs facial recognition, and stores the results in a Google BigQuery table.
 
+# https://github.com/marleyrosario/facial-recgonition
+
 ## Dependencies
 
 - Docker
