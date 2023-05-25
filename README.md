@@ -4,6 +4,7 @@ This script uses the DeepFace library to perform facial recognition tasks. It do
 
 ## Dependencies
 
+- Docker
 - Python 3
 - google-cloud-storage
 - os
@@ -18,13 +19,17 @@ This script uses the DeepFace library to perform facial recognition tasks. It do
 
 The script uses the following environment variables:
 
-- PROJECT_ID: The project ID for Google Cloud.
-- BUCKET_NAME: The name of the storage bucket in Google Cloud.
-- BQTABEL: The name of the BigQuery table to store results.
+- GOOGLE_APPLICATION_CREDENTIALS: Your Google Cloud JSON Credential File.
 
-## Running the Script
+## Building the Docker Image
 
-1. Set the environment variables PROJECT_ID, BUCKET_NAME, and BQTABEL.
-2. Run the script using the command `python FacialRecognition.py`.
+You can build the Docker image using the following command:
 
-The script will download images, run facial recognition tasks, and store the results in the specified BigQuery table.
+```bash
+docker build --build-arg GOOGLE_APPLICATION_CREDENTIALS=<Your JSON Credential File> -t <Your Image Name> .
+```
+
+docker run -p 8080:8080 <Your Image Name>
+
+  
+The added sections include detailed instructions on how to build and run the Docker image for your facial recognition script.
